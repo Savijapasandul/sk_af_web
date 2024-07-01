@@ -150,6 +150,9 @@
               <div class="form-control">
                 <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
               </div>
+              <div class="form-control">
+                <input type="text" name="serviceType" id="serviceType" placeholder="Type of Service">
+              </div>                           
               <input type="submit" value="Send Enquiry" id="submit" class="btn">
             </form>
             <p>Or you can reach us at: <br> Phone: +9471 9909763 | +9477 8569206 <br> Email: <a class="email-link" href="mailto:accounting@sk.lk?subject=SK Inquiry">accounting@sk.lk</a><br> Location: 501, Dandugama, Ja-Ela, Sri Lanka</p>
@@ -173,6 +176,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <script>
+
     const navbar = document.getElementById('navbar');
     let scrolled = false;
 
@@ -191,6 +195,20 @@
         scrolled = false;
       }
     };
+    document.querySelector('.callback-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const emailAddress = document.getElementById('emailAddress').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const serviceType = document.getElementById('serviceType').value;
+    
+    const subject = 'New Inquiry';
+    const body = `First Name: ${firstName}\nLast Name: ${lastName}\nEmail Address: ${emailAddress}\nPhone Number: ${phoneNumber}\nService Type: ${serviceType}\nMessage:`;
+    
+    window.location.href = `mailto:accounting@sk.lk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
   </script>
   
 </body>

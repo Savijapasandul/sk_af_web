@@ -1,5 +1,5 @@
 .text-primary {
-  color: #0284d0;
+  color: #28a745;
 }
 
 .text-secondary {
@@ -25,16 +25,37 @@
   color: #000000;
 }
 .btn-secondary, .bg-secondary {
-  background: #0284d0;
+  background: #28a745;
   color: #fff;
 }
 .btn-dark, .bg-dark {
   background: #333;
-  color: #fff;
+  color: #ffffff;
 }
 .btn-light, .bg-light {
   background: #f4f4f4;
   color: #333;
+}
+
+.service_tooltip div {
+  position: relative;
+  cursor: pointer;
+}
+
+.service_tooltip div:hover::before {
+  content: attr(data-description);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 180px;
+  background-color: rgba(0, 0, 0);
+  color: #fff;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  opacity: 0.75;
+  pointer-events: none;
 }
 
 .btn-outline {
@@ -42,7 +63,6 @@
   border: 1px solid #fff;
 }
 
-/* Flex items */
 .flex-items {
   display: flex;
   align-items: center;
@@ -55,7 +75,6 @@
   padding: 20px;
 }
 
-/* Flex-columns */
 .flex-columns .row {
   display: flex;
   flex-direction: row;
@@ -102,7 +121,6 @@
   margin: 20px 0;
 }
 
-/* Section cases header */
 .section-header {
   padding: 30px;
   display: flex;
@@ -121,7 +139,6 @@
   padding: 20px 20px 40px;
 }
 
-/* Flex grid */
 .flex-grid .row {
   display: flex;
   flex-wrap: wrap;
@@ -134,8 +151,6 @@
   padding: 0 4px;
 }
 
-/* Section blog */
-/* .flex-columns .flex-reverse */
 .flex-columns.flex-reverse .row {
   flex-direction: row-reverse;
 }
@@ -143,3 +158,5 @@
 .team img {
   border-radius: 5%;
 }
+
+
